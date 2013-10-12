@@ -24,8 +24,35 @@ body {
   border: 1px solid #aaa;
   list-style: none;
   padding: 0;
+  border-top: 10px solid #847670;
 }
 .to-do li {
   border: 1px solid #aaa;
   padding: 1em;
+}
+.site-footer {
+  color: #cccccc;
+  text-align: center;
+}
+@media (min-width: 550px) {
+  .site-footer {
+    padding: 0 10%;
+  }
+}
+@media (min-width: 800px) {
+  .site-footer {
+    padding: 0;
+    margin: 0 auto;
+    width: 600px;
+  }
+}
+.view {
+  width: 80%;
+  border: 1px solid #000;
+  float: right;
+}
+.checkbox {
+  width: 15%;
+  border: 1px solid #000;
+  float: left;
 }
