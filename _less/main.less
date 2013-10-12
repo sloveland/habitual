@@ -1,13 +1,37 @@
+/* 
+Authors: 
+  Jason
+  Sam
+ */
+
+// VARIABLES
+
 @dark-gray: #777;
 @medium-gray: #999;
 @light-gray: #ccc;
 @lighter-gray: #eee;
 @lightest-gray: #efefef;
+@red: #f47575;
+
+// MIXINS
 
 .letterpress(@color) {
   text-shadow: -1px -1px 0px darken(@color, 15%), 
     1px 1px 0px lighten(@color, 20%);
 }
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+// STYLES
 
 body {
   background-color: @lighter-gray;
@@ -37,7 +61,9 @@ body {
   border-top: 10px solid #847670;
   li {
     border: 1px solid #aaa;
-    padding: 1em;
+    overflow: hidden;
+    background-color: #fff;
+    color: @medium-gray;
   }
 }
 .site-footer{
@@ -53,12 +79,18 @@ body {
   }
 }
 .view{
-  width: 80%;
-  border: 1px solid #000;
+  width: 84%;
+  border-left: 1px solid @red;
   float: right;
+  box-sizing: border-box;
+  padding: 1em;
+  line-height: 2em;
 }
 .checkbox{
   width: 15%;
-  border: 1px solid #000;
   float: left;
+  box-sizing: border-box;
+  padding: 1em;
+  border-right: 1px solid @red;
+  height: 4em;
 }
