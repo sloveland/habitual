@@ -1,4 +1,41 @@
-body{
-	background-color: black;
-	color: white;
+@dark-gray: #777;
+@medium-gray: #999;
+@light-gray: #ccc;
+@lighter-gray: #eee;
+@lightest-gray: #efefef;
+
+.letterpress(@color) {
+  text-shadow: -1px -1px 0px darken(@color, 15%), 
+    1px 1px 0px lighten(@color, 20%);
+}
+
+body {
+  background-color: @lighter-gray;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.main {
+  @media (min-width: 550px) {
+    padding: 0 10%;
+  }
+  @media (min-width: 800px) {
+    padding: 0;
+    margin: 0 auto;
+    width: 600px;
+  }
+}
+.site-title {
+  color: @light-gray;
+  .letterpress(@light-gray);
+  text-align: center;
+  font-size: 4em;
+  
+}
+.to-do {
+  border: 1px solid #aaa;
+  list-style: none;
+  padding: 0;
+  li {
+    border: 1px solid #aaa;
+    padding: 1em;
+  }
 }
